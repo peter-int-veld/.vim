@@ -1,2 +1,2 @@
 # .vim
-My private Vim settings
+My Vim settings
