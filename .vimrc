@@ -25,6 +25,9 @@ Plugin 'rking/ag.vim'
 Plugin 'YankRing.vim'
 Plugin 'duff/vim-scratch'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'bufexplorer.zip'
+Plugin 'honza/vim-snippets'
+Plugin 'sjl/gundo.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -36,6 +39,9 @@ syntax on
 set modelines=0
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
 set nowrap
 set ignorecase
 set smartcase
@@ -46,7 +52,7 @@ set laststatus=2
 set statusline=%f
 set encoding=utf-8
 set relativenumber
-set undofile
+"set undofile
 set cursorline
 set ttyfast
 set hidden
@@ -114,3 +120,13 @@ map <c-f> :call JsBeautify()<cr>
 :noremap <F5> :NERDTreeToggle<CR>
 
 
+"
+" Use ag as the default search engine for ctrl-P
+"
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
