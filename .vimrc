@@ -52,7 +52,6 @@ set laststatus=2
 set statusline=%f
 set encoding=utf-8
 set relativenumber
-"set undofile
 set cursorline
 set ttyfast
 set hidden
@@ -60,7 +59,6 @@ set gdefault
 set hlsearch
 set incsearch
 set showmatch
-"set list
 set listchars=tab:▸\ 
 
 "
@@ -83,11 +81,16 @@ highlight SpecialKey guifg=#F2F3F4
 " Leader key settings
 "
 let mapleader=" "
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>n :bn<CR>
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>v V`]
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <Leader>t :NERDTreeToggle<CR>
+nnoremap <Leader>j :call JsBeautify()<cr>
+nnoremap <Leader>b :BufExplorer<cr>
+nnoremap <Leader>f :CtrlP<cr>
+map <Leader>m<Plug>(easymotion-prefix)
 
 "
 " NERDTree settings
@@ -100,33 +103,14 @@ let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=40
 
-"autocmd VimEnter * NERDTree
-
-map , :buffers<CR>
-
-"
-" EasyMotion settings
-"
-map <Leader> <Plug>(easymotion-prefix)
-
-"
-" JsBeautify settings
-"
-map <c-f> :call JsBeautify()<cr>
-
-"
-" Shortcut for highlight search
-"
-:noremap <F5> :NERDTreeToggle<CR>
-
 
 "
 " Use ag as the default search engine for ctrl-P
 "
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ -g ""'
+"let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+"      \ --ignore .git
+"      \ --ignore .svn
+"      \ --ignore .hg
+"      \ --ignore .DS_Store
+"      \ --ignore "**/*.pyc"
+"      \ -g ""'
