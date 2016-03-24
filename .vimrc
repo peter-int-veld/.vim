@@ -49,7 +49,7 @@ set number
 set foldmethod=indent
 set foldlevelstart=80
 set laststatus=2
-set statusline=%f
+set statusline=%f,\ line:\ %l,\ column:\ %c
 set encoding=utf-8
 set relativenumber
 set cursorline
@@ -65,8 +65,6 @@ set listchars=tab:▸\
 " Standard command remappings
 "
 inoremap jj <ESC>
-nnoremap / /\v
-vnoremap / /\v
 nnoremap <tab> %
 vnoremap <tab> %
 nnoremap ; :
@@ -81,16 +79,16 @@ highlight SpecialKey guifg=#F2F3F4
 " Leader key settings
 "
 let mapleader=" "
+let g:EasyMotion_leader_key = '<Leader>m' 
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>n :bn<CR>
-nnoremap <leader><space> :noh<cr>
-nnoremap <leader>v V`]
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <Leader><space> :noh<cr>
+nnoremap <Leader>v V`]
+nnoremap <Leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <Leader>t :NERDTreeToggle<CR>
 nnoremap <Leader>j :call JsBeautify()<cr>
 nnoremap <Leader>b :BufExplorer<cr>
 nnoremap <Leader>f :CtrlP<cr>
-map <Leader>m<Plug>(easymotion-prefix)
 
 "
 " NERDTree settings
@@ -103,14 +101,13 @@ let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=40
 
-
 "
 " Use ag as the default search engine for ctrl-P
 "
-"let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-"      \ --ignore .git
-"      \ --ignore .svn
-"      \ --ignore .hg
-"      \ --ignore .DS_Store
-"      \ --ignore "**/*.pyc"
-"      \ -g ""'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
