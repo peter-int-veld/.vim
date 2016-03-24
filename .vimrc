@@ -17,7 +17,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'beautify-web/js-beautify'
-Plugin 'maksimr/vim-jsbeautify'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'raimondi/delimitmate'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'valloric/youcompleteme'
@@ -86,7 +86,7 @@ nnoremap <Leader><space> :noh<cr>
 nnoremap <Leader>v V`]
 nnoremap <Leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <Leader>t :NERDTreeToggle<CR>
-nnoremap <Leader>j :call JsBeautify()<cr>
+nnoremap <Leader>j :Autoformat<cr>
 nnoremap <Leader>b :BufExplorer<cr>
 nnoremap <Leader>f :CtrlP<cr>
 
